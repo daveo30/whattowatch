@@ -21,7 +21,11 @@ for movie in movies:
     try:
         req = urllib2.urlopen("http://www.omdbapi.com/?t="+x+"&y=&plot=short&r=json").read()
         moviedetjson=json.loads(req)
-        print(moviedetjson['Title'])
-        print(moviedetjson['imdbRating'])
+        print("Name: "+ moviedetjson['Title'])
+        print("Genre: "+ moviedetjson['Genre'])
+        print("IMDB Rating: " + moviedetjson['imdbRating'])
+        print("Director: "+ moviedetjson['Director'])
+        print("Actors :"+ moviedetjson['Actors'])
+        print ""
     except:
         print "not found"
